@@ -1,11 +1,38 @@
 import React, {Component} from 'react';
-import { Body, Title, Container, Header, Footer, FooterTab, Button, Text, Icon } from 'native-base';
+import { Body, Content, Title, Container, Header, Footer, FooterTab, Button, Icon } from 'native-base';
+import { Text } from 'react-native';
 
 import { MapComponent } from "./components/";
 
-export class App extends Component {
+interface Props { }
+interface States {
+    buttonActive: string;
+}
+
+export class App extends Component<Props, States> {
+
+    constructor(props: any) {
+        super(props);
+        this.state = {
+          buttonActive: "navigate",
+        };
+    }
+
+    private activateButton(buttonActive: string): void {
+        this.setState({
+            buttonActive: buttonActive,
+        });
+    }
+
     render() {
-        console.log("rendering...");
+        let container: JSX.Element  = null;
+        if (this.state.buttonActive === "navigate") {
+            container = <MapComponent></MapComponent>;
+        }
+
+        if (this.state.buttonActive === "camera") {
+            container = <Content><Text>CAMERA</Text></Content>;
+        }
 
         return (
             <Container>
@@ -14,15 +41,15 @@ export class App extends Component {
                     <Title>Google Map</Title>
                     </Body>
                 </Header>
-                <MapComponent></MapComponent>
+                {container}
                 <Footer>
                     <FooterTab>
-                        <Button active>
-                            <Icon active name="navigate" />
+                        <Button active={this.state.buttonActive === "navigate"} onPress= {() => {this.activateButton("navigate")}}>
+                            <Icon active={this.state.buttonActive === "navigate"} name="navigate" />
                             <Text>Maps</Text>
                         </Button>
-                        <Button>
-                            <Icon active name="camera" />
+                        <Button active={this.state.buttonActive === "camera"} onPress= {() => {this.activateButton("camera")}}>
+                            <Icon active={this.state.buttonActive === "camera"} name="camera" />
                             <Text>Camera</Text>
                         </Button>
                     </FooterTab>

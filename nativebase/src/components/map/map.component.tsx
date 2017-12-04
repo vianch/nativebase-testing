@@ -93,10 +93,7 @@ export class MapComponent extends Component<Props, States> {
         }
 
         return (
-
-
                 <Content>
-
                         <View style={MapStyles.container}>
                             <MapView
                                 initialRegion={this.state.mapCoordinates}
@@ -118,10 +115,7 @@ export class MapComponent extends Component<Props, States> {
                             </Text>
                             <Text>Longitude: {this.state.mapCoordinates.latitude}</Text>
                         </View>
-
                 </Content>
-
-
         );
     }
 }
