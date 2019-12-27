@@ -3421,10 +3421,6 @@ react-native-easy-grid@0.1.15:
     prop-types "^15.5.10"
     react-timer-mixin "^0.13.3"
 
-react-native-location@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/react-native-location/-/react-native-location-0.27.0.tgz#8e920a7bfbd4b55833028f2dad65edc12449d6f5"
-
 react-native-maps@^0.18.3:
   version "0.18.3"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.18.3.tgz#85dee19596aff434ff65d69b5a218288c3363a3d"
@@ -4028,8 +4024,8 @@ string_decoder@~1.0.3:
     safe-buffer "~5.1.0"
 
 stringstream@~0.0.4, stringstream@~0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.5.tgz#4e484cd4de5a0bbbee18e46307710a8a81621878"
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.6.tgz#7880225b0d4ad10e30927d167a1d6f2fd3b33a72"
 
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
